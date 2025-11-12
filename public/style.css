@@ -2,4 +2,278 @@
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+    color: rgba(255, 255, 255, 0.795);
 }
+
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #252525;
+}
+
+.contenedor-principal{
+    height: 780px;
+    width: 500px;
+    background-color: #131313;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding:0 50px;
+}
+
+.contenedor-titulo{
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+    gap: 10px;
+}
+
+.contenedor-titulo h1{
+    font-size: 40px;
+}
+
+.contenedor-titulo p{
+    font-size: 20px;
+    color:#a3a2a2;
+}
+
+.contenedor-buscar{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:30px;
+    padding: 0;
+}
+
+
+.parte-buscar{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width:auto;
+    background-color: #252525;
+    border-radius: 10px;
+}
+
+.parte-buscar span{
+    font-size: 25px;
+    padding:0 15px ;
+}
+
+.parte-buscar input{
+    height: 100%;
+    width: 365px;
+    background-color: #252525;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    
+}
+
+input[type="search"]:focus {
+  outline: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none; 
+}
+
+.contenedor-buscar button{
+    background-color: #252525;
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-formulario{
+    display: flex;
+    flex: 1; 
+    width: 535px;
+    flex-direction: column;
+    gap: 16px;
+    overflow: scroll;
+    padding-right:10px;
+    padding-bottom:0 ;
+}
+
+
+/* 2. Personalización: Ancho de la barra completa */
+.contenedor-formulario::-webkit-scrollbar {
+    width: 10px; /* Hazla más delgada */
+}
+
+/* 3. Personalización: Fondo de la barra (Track) */
+
+/* 4. Personalización: El Pulgar (Thumb) - La parte que se arrastra */
+.contenedor-formulario::-webkit-scrollbar-thumb {
+    background-color:#25252560; /* Color azul, común para elementos interactivos */
+    border-radius: 10px;
+    /* Da un pequeño borde para separarlo del track, si lo deseas */
+}
+
+/* 5. Personalización: Estado al pasar el mouse (Hover) */
+.contenedor-formulario::-webkit-scrollbar-thumb:hover {
+    background-color:#252525b0; /* Un azul más oscuro al interactuar */
+}
+
+.contenedor-formulario::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+.contenedor-notas{
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #252525;
+    border-radius: 10px;
+    border-left: 5px solid #ff3333c5;
+    width: 455px;
+}
+
+
+.contenedor-completar{
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Oculta el checkbox nativo */
+.real-checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute; /* Para que no afecte el flujo */
+}
+
+/* Estilo del cuadro personalizado (siempre visible) */
+.custom-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #FFFFFF; /* Borde blanco */
+    background-color: transparent;
+    border-radius: 4px;
+    position: relative; /* Esencial para posicionar el pseudo-elemento ::after */
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+/* Estilo cuando está MARCADO */
+.real-checkbox:checked + .custom-box {
+    background-color: #D32F2F; /* Fondo rojo cuando está marcado */
+    border-color: #ff3333c5;
+}
+
+.real-checkbox:checked + .custom-box::after {
+    content: ''; /* Obligatorio para pseudo-elementos */
+    position: absolute; /* Para posicionarlo dentro del .custom-box */
+    left: 6px; /* Ajusta la posición horizontal */
+    top: 2px;  /* Ajusta la posición vertical */
+    width: 6px; /* Ancho de la línea de la palomita */
+    height: 12px; /* Largo de la línea de la palomita */
+    border: solid white; /* Color blanco para la palomita */
+    border-width: 0 3px 3px 0; /* Solo bordes derecho e inferior para la forma de 'V' */
+    transform: rotate(45deg); /* Rota para formar la palomita */
+}
+
+
+.contenedor-descripcion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
+    gap: 5px;
+    padding-right: 90px;
+}
+
+.contenedor-descripcion h2{
+    font-size: 20px;
+}
+
+.contenedor-descripcion p{
+    color:#a3a2a2;
+}
+.contenedor-prioridad{
+    display: flex;
+    width: auto;
+    height: 30%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+
+.contenedor-prioridad span{
+    /* color: #ff3131; */
+    color: #ff3333c5;
+    font-weight: bold;
+    font-size: 15px;
+    padding-bottom:8px ;
+}
+
+.contenedor-prioridad time{
+    color:#a3a2a2;
+}
+
+.contenedor-acciones{
+    display: flex;
+    margin-top: auto;
+    height: 85px;
+    width: auto;
+    padding: 0 0 20px 0;                                                                                                        
+    justify-content: space-between;
+    align-items: center;
+}
+.contenedor-botones{
+    display: flex;
+    gap: 20px;
+}
+
+.btn-agregar{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #f3ce3cdc;
+    font-size: 40px;
+    color: #131313;
+    border: none;
+}
+
+.btn-eliminar{
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    background-color: #ff3333c5;
+    font-size: 20px;
+    font-weight: bold;
+    color: #131313;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-editar{
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    background-color:#a3a2a281;
+    font-size: 20px;
+    font-weight: bold;
+    color: #131313;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
