@@ -1,0 +1,15 @@
+INSERT INTO actividades (titulo, descripcion, fecha, hora, estatus, prioridad, enabled)
+VALUES ('Preparar presentación', 'Revisar diapositivas para el lunes', '2025-11-13', '09:30:00', 'Pendiente', 1, TRUE);
+
+SELECT * FROM actividades
+
+CREATE TABLE actividades (
+    id SERIAL PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    descripcion TEXT, 
+    fecha DATE,
+    hora TIME,
+    estatus VARCHAR(50) DEFAULT 'Pendiente',
+    prioridad INTEGER DEFAULT 3,
+    enabled BOOLEAN DEFAULT TRUE
+);
